@@ -1,7 +1,5 @@
 <h3>{{ vm.title }}</h3>
 
-<p>Welcome</p>
-
 <ul>
-  <li ng-repeat="c in vm.user">{{ c }}</li>
+  <li ng-repeat="c in vm.user">Hi, I'm {{ c.first }} {{ c.last }}, and I like to describe myself with this next statment: <span>"{{ c.msg }}"</span><hr>My email address is {{ c.email }} and my website is <a href="{{ c.website }}">{{ c.website }}</a>. Contact me if you like what you see!</li>
 </ul>

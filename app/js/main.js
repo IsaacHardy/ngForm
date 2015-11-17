@@ -76,14 +76,22 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var UserController = function UserController() {
+var UserController = function UserController(UserService) {
 
   var vm = this;
 
   vm.title = 'Users Page';
+
+  vm.user = getUsers();
+
+  function getUsers() {
+    UserService.getUsers().then(function (res) {
+      vm.user = res.data.results;
+    });
+  }
 };
 
-UserController.$inject = [];
+UserController.$inject = ['UserService'];
 
 exports['default'] = UserController;
 module.exports = exports['default'];
@@ -134,8 +142,9 @@ var UserService = function UserService($http, PARSE) {
   this.getUsers = getUsers;
   this.addUser = addUser;
 
-  function Car(userObj) {
-    this.name = userObj.make;
+  function User(userObj) {
+    this.first = userObj.first;
+    this.last = userObj.last;
     this.email = userObj.email;
     this.website = userObj.website;
     this.msg = userObj.msg;
@@ -146,7 +155,7 @@ var UserService = function UserService($http, PARSE) {
   }
 
   function addUser(userObj) {
-    var c = new Car(userObj);
+    var c = new User(userObj);
     return $http.post(url, c, PARSE.CONFIG);
   }
 };

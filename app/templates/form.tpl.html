@@ -1,7 +1,8 @@
 <h3>Add a User</h3>
 
 <form ng-submit="vm.addUser(user)">
-  <input placeholder="Isaac Hardy" ng-model="user.name">
+  <input placeholder="Isaac" ng-model="user.first">
+  <input placeholder="Hardy" ng-model="user.last">
   <input placeholder="isaac@gmail.com" ng-model="user.email">
   <input placeholder="http://isaac.com" ng-model="user.website">
   <textarea placeholder="Write a message..." ng-model="user.msg"></textarea>

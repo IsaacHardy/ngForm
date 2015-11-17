@@ -5,8 +5,9 @@ let UserService = function($http, PARSE) {
   this.getUsers = getUsers;
   this.addUser = addUser;
 
-  function Car (userObj) {
-    this.name = userObj.make;
+  function User (userObj) {
+    this.first = userObj.first;
+    this.last = userObj.last;
     this.email = userObj.email;
     this.website = userObj.website;
     this.msg = userObj.msg;
@@ -17,7 +18,7 @@ let UserService = function($http, PARSE) {
   }
 
   function addUser (userObj) {
-    let c = new Car(userObj);
+    let c = new User(userObj);
     return $http.post(url, c, PARSE.CONFIG);
   }
 
