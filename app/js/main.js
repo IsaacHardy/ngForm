@@ -195,7 +195,7 @@ var UserController = function UserController(UserService) {
 
   var vm = this;
 
-  vm.title = 'Users Page';
+  vm.title = 'User Info';
 
   vm.user = getUsers();
 

@@ -2,7 +2,7 @@ let UserController = function(UserService) {
   
   let vm = this;
 
-  vm.title = 'Users Page';
+  vm.title = 'User Info';
 
   vm.user = getUsers();
 

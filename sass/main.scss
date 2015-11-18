@@ -10,7 +10,9 @@ body {
   width: 600px;
   margin: 15px auto;
 }
-
+ul {
+  list-style: none;
+}
 .load {
   border-left: 4px solid black;
 }
@@ -27,4 +29,8 @@ small {
 }
 .pass {
   color: green;
+}
+
+span {
+  color: brown;
 }
