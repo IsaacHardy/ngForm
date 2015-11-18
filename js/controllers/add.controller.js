@@ -16,11 +16,11 @@ let AddController = function(UserService, $scope, $state) {
   function addUser (userObj) {
     if (first.check && last.check && email.check && web.check && msg.check) {
       UserService.addUser(userObj).then( (res) => {
-        $state.go('root.user');
+        $state.go('root.users');
       });
     } else {
       let array = [first, last, email, web, msg];
-      
+
       $.each(array, function() {
         $('#' + this.name).removeClass('fail');
       });
@@ -65,6 +65,7 @@ let AddController = function(UserService, $scope, $state) {
       email.check = false;
     } else {
       if (newVal.length > 0) {
+        $('#smallEmail').addClass('pass');
         vm.errEmail = 'Perfect!';
         email.check = true;
       } else  {
@@ -79,6 +80,7 @@ let AddController = function(UserService, $scope, $state) {
     let httpsStr = newVal.indexOf("https://");
 
     if (httpStr !== -1 || httpsStr !== -1) {
+      $('#smallWeb').addClass('pass');
       vm.errWeb = 'Perfect!';
       web.check = true;    
     } else {

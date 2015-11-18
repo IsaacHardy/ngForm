@@ -6405,4 +6405,7 @@ small {
 .fail {
   border-left: 4px solid red; }
 
+.pass {
+  color: green; }
+
 /*# sourceMappingURL=main.css.map */

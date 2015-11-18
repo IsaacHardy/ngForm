@@ -1,7 +1,7 @@
 let config = function($stateProvider, $urlRouterProvider) {
   
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/users/add');
 
   $stateProvider
     .state('root', {

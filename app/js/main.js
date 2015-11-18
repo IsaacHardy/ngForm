@@ -6,7 +6,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var config = function config($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/users/add');
 
   $stateProvider.state('root', {
     abstract: true,
@@ -74,7 +74,7 @@ var AddController = function AddController(UserService, $scope, $state) {
   function addUser(userObj) {
     if (first.check && last.check && email.check && web.check && msg.check) {
       UserService.addUser(userObj).then(function (res) {
-        $state.go('root.user');
+        $state.go('root.users');
       });
     } else {
       var array = [first, last, email, web, msg];
@@ -123,6 +123,7 @@ var AddController = function AddController(UserService, $scope, $state) {
       email.check = false;
     } else {
       if (newVal.length > 0) {
+        (0, _jquery2['default'])('#smallEmail').addClass('pass');
         vm.errEmail = 'Perfect!';
         email.check = true;
       } else {
@@ -137,6 +138,7 @@ var AddController = function AddController(UserService, $scope, $state) {
     var httpsStr = newVal.indexOf("https://");
 
     if (httpStr !== -1 || httpsStr !== -1) {
+      (0, _jquery2['default'])('#smallWeb').addClass('pass');
       vm.errWeb = 'Perfect!';
       web.check = true;
     } else {
