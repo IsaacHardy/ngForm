@@ -1,10 +1,26 @@
-<h3>Add a User</h3>
+<h3>Contact Us</h3>
 
 <form ng-submit="vm.addUser(user)">
-  <input placeholder="Isaac" ng-model="user.first">
-  <input placeholder="Hardy" ng-model="user.last">
-  <input placeholder="isaac@gmail.com" ng-model="user.email">
-  <input placeholder="http://isaac.com" ng-model="user.website">
-  <textarea placeholder="Write a message..." ng-model="user.msg"></textarea>
+  <div class="load" id="first">
+    <input placeholder="Isaac" ng-model="user.first">
+  </div>
+    <small>{{ vm.errFirst }}</small>
+  <div class="load" id="last">
+    <input placeholder="Hardy" ng-model="user.last">
+  </div>
+    <small>{{ vm.errLast }}</small>
+  <div class="load" id="email">
+    <input placeholder="isaac@gmail.com" ng-model="user.email">
+  </div>
+    <small>{{ vm.errEmail }}</small>
+  <div class="load" id="web">
+    <input placeholder="http://isaac.com" ng-model="user.website">
+  </div>
+    <small>{{ vm.errWeb }}</small>
+  <div class="load" id="msg">
+    <textarea placeholder="Write a message..." ng-model="user.msg"></textarea>
+  </div>
+    <small>{{ vm.errMsg }}</small>
+
   <button>Submit</button>
 </form>

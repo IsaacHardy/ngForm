@@ -10,3 +10,18 @@ body {
   width: 600px;
   margin: 15px auto;
 }
+
+.load {
+  border-left: 4px solid black;
+}
+
+small {
+  color: red;
+  position: absolute;
+  margin-top: -15px;
+
+}
+
+.fail {
+  border-left: 4px solid red;
+}
